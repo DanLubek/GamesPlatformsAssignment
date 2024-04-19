@@ -26,8 +26,7 @@ public class Gun : MonoBehaviour
 
     public void Grabbed()
     {
-        transform.parent = player.transform.GetChild(0);
         hand.gameObject.SetActive(false);
-
+        transform.parent = player.transform.GetChild(0);
     }
 }
