@@ -1,37 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class InputManager : MonoBehaviour
 {
-    public GameObject gun;
-
-    public GameObject inventory;
-
-    public PlayerController playerController;
     public GlideLocomotion glideLoco;
+
+
+    public XRRayInteractor leftInteractor;
 
     private void Update()
     {
-        //playerController.MovementEvent.Invoke();
-        //playerController.RotationEvent.Invoke();
-
         glideLoco.MovementEvent.Invoke();
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (-Input.GetAxis("XRI_Left_Primary2DAxis_Vertical") > 0.5f)
         {
-            gun.GetComponent<Gun>().grabbed.Invoke();
+            leftInteractor.enabled = true;
         }
-
-        if (gun.transform.parent == inventory.transform)
+        else
         {
-            if (Input.GetKeyDown(KeyCode.N) || Input.GetButtonDown("XRI_Right_TriggerButton"))
-            {
-                Debug.Log("Fired");
-                gun.GetComponent<Gun>().firedGun.Invoke();
-            }
+            leftInteractor.enabled = false;
         }
-
-        
     }
 }

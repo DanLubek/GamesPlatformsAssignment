@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class CubeColourChange : MonoBehaviour
 {
+    static int lightsLookedAt = 0;
+
+
     public Material colour1, colour2;
 
     public UnityEvent LookedAtCubeEvent;
@@ -28,12 +31,16 @@ public class CubeColourChange : MonoBehaviour
             {
                 cubeMR.sharedMaterial = colour2;
                 myLight.color = Color.green;
+                lightsLookedAt++;
             }
-            else if (cubeMR.sharedMaterial == colour2)
-            {
-                cubeMR.sharedMaterial = colour1;
-                myLight.color = Color.red;
-            }
+        }
+    }
+
+    private void Update()
+    {
+        if (lightsLookedAt == 3)
+        {
+            // do stuff
         }
     }
 }

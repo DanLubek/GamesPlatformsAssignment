@@ -20,9 +20,8 @@ public class GlideLocomotion : LocomotionProvider
         }
 
         float forward = Input.GetAxis("XRI_Right_Primary2DAxis_Vertical");
-        float sideways = Input.GetAxis("XRI_Right_Primary2DAxis_Horizontal");
 
-        if (forward == 0 && sideways == 0)
+        if (forward == 0)
         {
             isMoving = false;
             EndLocomotion();
@@ -37,7 +36,7 @@ public class GlideLocomotion : LocomotionProvider
 
         if (forward > 0.5f || forward < -0.5f)
         {
-            Vector3 moveDirection = Vector3.forward;
+            Vector3 moveDirection = Vector3.zero;
 
             if (trackedTransform != null)
             {
@@ -48,11 +47,5 @@ public class GlideLocomotion : LocomotionProvider
             moveDirection *= -forward * velocity * Time.deltaTime;
             rigRoot.Translate(moveDirection);
         }
-
-        //if (trackedTransform == null && sideways != 0f)
-        //{
-        //    float rotation = sideways * 10 * Time.deltaTime;
-        //    rigRoot.Rotate(0, rotation, 0);
-        //}
     }
 }

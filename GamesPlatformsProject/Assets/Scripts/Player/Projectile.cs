@@ -20,9 +20,14 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if (!collision.gameObject.CompareTag("Gun"))
-        //{
-        //    Destroy(gameObject);
-        //}        
+        if (collision.gameObject.CompareTag("Target"))
+        {
+            collision.gameObject.GetComponent<TargetMove>().disappearEvent.Invoke();
+        }
+
+
+
+
+        Destroy(gameObject);
     }
 }

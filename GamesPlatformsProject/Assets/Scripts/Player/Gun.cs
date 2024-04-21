@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
     
     public UnityEvent firedGun;
     public UnityEvent grabbed;
+    public UnityEvent released;
 
     public GameObject player;
 
@@ -28,5 +29,11 @@ public class Gun : MonoBehaviour
     {
         hand.gameObject.SetActive(false);
         transform.parent = player.transform.GetChild(0);
+    }
+
+    public void Released()
+    {
+        hand.gameObject.SetActive(true);
+        transform.parent = null;
     }
 }
