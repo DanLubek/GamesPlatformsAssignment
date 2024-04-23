@@ -45,16 +45,25 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5887953293953347776}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2431755, y: 1.5466532, z: 15.2}
-  m_Center: {x: 0.0014781952, y: 0.5366208, z: 0.0068659782}
+  serializedVersion: 3
+  m_Size: {x: 0.2431755, y: 6.104572, z: 17.007969}
+  m_Center: {x: 0.0014781952, y: 2.8155801, z: 0.18662262}
 --- !u!1001 &1014055892332918951
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 150505669665268444}
     m_Modifications:
     - target: {fileID: 2827270825187339625, guid: 17ae22a8c221d254f84fbe0e68ed0705,
@@ -119,6 +128,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3169709538269680814, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
 --- !u!4 &2478401517364219764 stripped
 Transform:
@@ -131,6 +143,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 150505669665268444}
     m_Modifications:
     - target: {fileID: 2827270825187339625, guid: 17ae22a8c221d254f84fbe0e68ed0705,
@@ -195,6 +208,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3169709538269680814, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
 --- !u!4 &7421279282483912390 stripped
 Transform:
@@ -207,6 +223,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 150505669665268444}
     m_Modifications:
     - target: {fileID: 2827270825187339625, guid: 17ae22a8c221d254f84fbe0e68ed0705,
@@ -271,6 +288,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3169709538269680814, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
 --- !u!4 &8862238843312366442 stripped
 Transform:
@@ -283,6 +303,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 150505669665268444}
     m_Modifications:
     - target: {fileID: 2827270825187339625, guid: 17ae22a8c221d254f84fbe0e68ed0705,
@@ -347,6 +368,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3169709538269680814, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
 --- !u!4 &8360537713681141076 stripped
 Transform:
@@ -359,6 +383,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 150505669665268444}
     m_Modifications:
     - target: {fileID: 2827270825187339625, guid: 17ae22a8c221d254f84fbe0e68ed0705,
@@ -423,6 +448,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3169709538269680814, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
 --- !u!4 &5912910036771378840 stripped
 Transform:

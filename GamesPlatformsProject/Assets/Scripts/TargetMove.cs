@@ -1,28 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class TargetMove : TargetManager
+public class TargetMove : MonoBehaviour
 {
-    public UnityEvent disappearEvent;
+    Vector3 startPos, tempPos;
 
-    public void Disappear()
+    private void Start()
     {
-        if (isShootingTargets)
-        {
-            score++;
-        }
-        
-        gameObject.SetActive(false);
-
-        StartCoroutine("ReappearDelay");
+        startPos = transform.position;
+        tempPos = new Vector3(0, -10, 0);
     }
 
-    IEnumerator ReappearDelay()
+    public void Disappear(bool respawn)
     {
-        yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+        transform.position = tempPos;        
 
-        gameObject.SetActive(true);
+        if (respawn)
+        {
+            TargetManager.score++;
+            StartCoroutine(RespawnDelay());
+        }
+    }
+
+    public void Reappear()
+    {
+        transform.position = startPos;
+    }
+
+    IEnumerator RespawnDelay()
+    {
+        yield return new WaitForSeconds(Random.Range(1f, 2f));
+
+        Reappear();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Disappear(true);
+        }
     }
 }

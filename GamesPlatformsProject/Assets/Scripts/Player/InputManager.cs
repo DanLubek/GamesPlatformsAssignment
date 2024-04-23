@@ -8,7 +8,6 @@ public class InputManager : MonoBehaviour
 {
     public GlideLocomotion glideLoco;
 
-
     public XRRayInteractor leftInteractor;
 
     private void Update()

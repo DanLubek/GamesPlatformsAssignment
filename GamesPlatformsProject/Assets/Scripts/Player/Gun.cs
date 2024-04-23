@@ -5,17 +5,15 @@ using UnityEngine.Events;
 
 public class Gun : MonoBehaviour
 {
-    public GameObject firePoint;   
-    
-    public UnityEvent firedGun;
-    public UnityEvent grabbed;
-    public UnityEvent released;
+    public GameObject firePoint;
 
     public GameObject player;
 
     public GameObject projectileObj;
 
     public GameObject hand;
+
+    public Collider col1, col2;
 
     public void FireGun()
     {
@@ -32,8 +30,19 @@ public class Gun : MonoBehaviour
     }
 
     public void Released()
-    {
-        hand.gameObject.SetActive(true);
+    {        
         transform.parent = null;
+        Physics.IgnoreCollision(col1, hand.gameObject.GetComponent<Collider>(), true);
+        Physics.IgnoreCollision(col2, hand.gameObject.GetComponent<Collider>(), true);
+        hand.gameObject.SetActive(true);
+        StartCoroutine(ReEnableHandCollision());
+    }
+
+    IEnumerator ReEnableHandCollision()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        Physics.IgnoreCollision(col1, hand.gameObject.GetComponent<Collider>(), false);
+        Physics.IgnoreCollision(col2, hand.gameObject.GetComponent<Collider>(), false);
     }
 }
