@@ -12,19 +12,12 @@ public class PlayerController : MonoBehaviour
 
     CubeColourChange ccc;
 
-    void Start()
-    {
-        looking = false;
-    }
+    Ray ray;
+    RaycastHit hit;
+    GameObject hitObject;
 
     void Update()
     {
-        Ray ray;
-        RaycastHit hit;
-        GameObject hitObject;
-
-        Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.rotation * Vector3.forward * 100f);
-
         ray = new Ray(playerCamera.transform.position, playerCamera.transform.rotation * Vector3.forward);
 
         if (Physics.Raycast(ray, out hit))

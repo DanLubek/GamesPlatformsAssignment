@@ -12,6 +12,28 @@ public class GlideLocomotion : LocomotionProvider
     public Transform rigRoot;
     public float velocity = 2f;
 
+    bool hasMoved;
+    Vector3 startPos;
+    public PlayerControlManager pcm;
+
+    void Start()
+    {
+        startPos = transform.position;
+        hasMoved = false;
+    }
+
+    private void Update()
+    {
+        if (!hasMoved)
+        {
+            if (Vector3.Distance(gameObject.transform.position, startPos) > 2f)
+            {
+                hasMoved = true;
+                pcm.DisplayNextTip(2);
+            }
+        }
+    }
+
     public void PlayerMove()
     {
         if (!isMoving && !CanBeginLocomotion())

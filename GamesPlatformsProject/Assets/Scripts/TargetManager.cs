@@ -19,21 +19,25 @@ public class TargetManager : MonoBehaviour
 
     bool canDespawn = false;
 
+    public PlayerControlManager pcm;
+
     private void Start()
     {
         isShootingTargets = false;        
 
-        targets.Add(GameObject.Find("target_001"));
-        targets.Add(GameObject.Find("target_001 (1)"));
-        targets.Add(GameObject.Find("target_001 (2)"));
-        targets.Add(GameObject.Find("target_001 (3)"));
-        targets.Add(GameObject.Find("target_001 (4)"));
+        targets.Add(GameObject.Find("Target_One"));
+        targets.Add(GameObject.Find("Target_Two"));
+        targets.Add(GameObject.Find("Target_Three"));
+        targets.Add(GameObject.Find("Target_Four"));
+        targets.Add(GameObject.Find("Target_Five"));
 
         scoreText = GameObject.Find("Score_Text").GetComponent<TMP_Text>();
         bestText = GameObject.Find("Best_Text").GetComponent<TMP_Text>();
         newRecordText = GameObject.Find("NewBest_Text").GetComponent<TMP_Text>();
         countdownText = GameObject.Find("Countdown_Text").GetComponent<TMP_Text>();
         timerText = GameObject.Find("Timer_Text").GetComponent<TMP_Text>();
+
+        pcm = GameObject.Find("Player").GetComponent<PlayerControlManager>();
 
         scoreText.text = "Score : " + 0.ToString();
 
@@ -147,6 +151,7 @@ public class TargetManager : MonoBehaviour
             target.GetComponent<TargetMove>().StopAllCoroutines();
         }
         DespawnOrRespawnAll(true, false);
+        pcm.DisplayNextTip(5);
         canDespawn = true;
         timerText.text = 0.ToString();
         if (score > best)

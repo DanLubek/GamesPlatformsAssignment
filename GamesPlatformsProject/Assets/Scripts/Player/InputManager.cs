@@ -10,17 +10,27 @@ public class InputManager : MonoBehaviour
 
     public XRRayInteractor leftInteractor;
 
+    bool canMove = false;
+
     private void Update()
     {
         glideLoco.MovementEvent.Invoke();
 
-        if (-Input.GetAxis("XRI_Left_Primary2DAxis_Vertical") > 0.5f)
+        if (canMove)
         {
-            leftInteractor.enabled = true;
-        }
-        else
-        {
-            leftInteractor.enabled = false;
-        }
+            if (-Input.GetAxis("XRI_Left_Primary2DAxis_Vertical") > 0.5f)
+            {
+                leftInteractor.enabled = true;
+            }
+            else
+            {
+                leftInteractor.enabled = false;
+            }
+        }        
+    }
+
+    public void ChangeCanMove()
+    {
+        canMove = true;
     }
 }

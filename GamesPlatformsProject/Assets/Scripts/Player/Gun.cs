@@ -15,12 +15,18 @@ public class Gun : MonoBehaviour
 
     public Collider col1, col2;
 
+    Vector3 fpPos;
+    Quaternion fpRot;
+
+    public ParticleSystem muzzleFlash;
+
     public void FireGun()
     {
-        Vector3 fpPos = firePoint.transform.position;
-        Quaternion fpRot = firePoint.transform.rotation;
+        fpPos = firePoint.transform.position;
+        fpRot = firePoint.transform.rotation;
 
         Instantiate(projectileObj, fpPos, fpRot);
+        muzzleFlash.Play();
     }
 
     public void Grabbed()

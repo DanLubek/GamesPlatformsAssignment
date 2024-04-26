@@ -7,7 +7,6 @@ public class CubeColourChange : MonoBehaviour
 {
     static int lightsLookedAt = 0;
 
-
     public Material colour1, colour2;
 
     public UnityEvent LookedAtCubeEvent;
@@ -15,6 +14,8 @@ public class CubeColourChange : MonoBehaviour
     MeshRenderer cubeMR;
 
     public Light myLight;
+
+    public PlayerControlManager pcm;
 
     private void Start()
     {
@@ -32,15 +33,13 @@ public class CubeColourChange : MonoBehaviour
                 cubeMR.sharedMaterial = colour2;
                 myLight.color = Color.green;
                 lightsLookedAt++;
-            }
-        }
-    }
 
-    private void Update()
-    {
-        if (lightsLookedAt == 3)
-        {
-            // do stuff
+                if (lightsLookedAt == 3)
+                {
+                    pcm.DisplayNextTip(1);
+                    enabled = false;
+                }
+            }
         }
     }
 }
